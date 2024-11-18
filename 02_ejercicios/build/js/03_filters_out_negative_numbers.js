@@ -1,8 +1,17 @@
 "use strict";
-let filterNegativeNums = (nums) => {
+const filterNegativeNums = (nums) => {
     let filterNums = [];
     nums.forEach(num => {
         if (num < 0) {
+            filterNums.push(num);
+        }
+    });
+    return filterNums;
+};
+const filterPositiveNums = (nums) => {
+    let filterNums = [];
+    nums.forEach(num => {
+        if (num >= 0) {
             filterNums.push(num);
         }
     });

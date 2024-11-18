@@ -1,28 +1,8 @@
 "use strict";
-let getNumberOfVowels = (str) => {
-    let numVowels = 0;
-    for (let i = 0; i < str.length; i++) {
-        let unicodeVal = str.charCodeAt(i);
-        if (
-        //normal Vowels
-        str[i] == 'a' || str[i] == 'A' ||
-            str[i] == 'e' || str[i] == 'E' ||
-            str[i] == 'i' || str[i] == 'I' ||
-            str[i] == 'o' || str[i] == 'O' ||
-            str[i] == 'u' || str[i] == 'U' ||
-            //special Vowels
-            (unicodeVal >= 192 && unicodeVal <= 197) ||
-            (unicodeVal >= 200 && unicodeVal <= 207) ||
-            (unicodeVal >= 210 && unicodeVal <= 214) ||
-            (unicodeVal >= 217 && unicodeVal <= 220) ||
-            (unicodeVal >= 224 && unicodeVal <= 229) ||
-            (unicodeVal >= 232 && unicodeVal <= 239) ||
-            (unicodeVal >= 242 && unicodeVal <= 246) ||
-            (unicodeVal >= 249 && unicodeVal <= 262)) {
-            numVowels += 1;
-        }
-    }
-    return numVowels;
+const getNumberOfVowels = (str) => {
+    const vowelRegex = /[aeiouAEIOU\u00C0-\u00C6\u00C8-\u00CE\u00D2-\u00D6\u00D9-\u00DC\u00E0-\u00E6\u00E8-\u00EE\u00F2-\u00F6\u00F9-\u00FE]/g;
+    const matches = str.match(vowelRegex);
+    return matches ? matches.length : 0;
 };
 const test2 = 'aAáòöä eE ÉÄÒ iI oO uU';
 console.log(getNumberOfVowels(test2));

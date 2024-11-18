@@ -1,5 +1,5 @@
 "use strict";
-let removeSpacesOnString = (str) => {
+const removeSpacesOnString = (str) => {
     let strWithOutSpaces = '';
     for (let i = 0; i < str.length; i++) {
         if (str[i] != ' ') {
